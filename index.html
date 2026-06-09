@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>守护地球 - 绿色未来从现在开始</title>
+    <title>EcoEarth - Green Future Starts Now</title>
     <style>
-        /* 全局样式重置 */
+        /* Global Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
@@ -19,7 +19,7 @@
             background-color: #f9fbf9;
         }
 
-        /* 导航栏 */
+        /* Navigation Bar */
         header {
             background-color: #ffffff;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -40,18 +40,19 @@
 
         .logo {
             font-size: 24px;
-            font-weight: bold;
+            font-weight: 700;
             color: #2e7d32;
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 8px;
+            letter-spacing: 0.5px;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 20px;
+            gap: 25px;
         }
 
         .nav-links a {
@@ -65,9 +66,9 @@
             color: #2e7d32;
         }
 
-        /* 英雄海报区 (Hero Section) */
+        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
                         url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
             height: 100vh;
             display: flex;
@@ -81,56 +82,62 @@
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 52px;
             margin-bottom: 20px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            font-weight: 700;
         }
 
         .hero p {
-            font-size: 20px;
-            max-width: 600px;
-            margin-bottom: 30px;
+            font-size: 22px;
+            max-width: 700px;
+            margin-bottom: 35px;
             text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 300;
         }
 
         .btn {
             background-color: #4caf50;
             color: white;
-            padding: 12px 30px;
+            padding: 14px 36px;
             text-decoration: none;
             font-size: 18px;
+            font-weight: 600;
             border-radius: 25px;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
         }
 
         .btn:hover {
             background-color: #388e3c;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(56, 142, 60, 0.4);
         }
 
-        /* 核心特色区 */
+        /* Core Values Section */
         .section {
-            padding: 80px 20px;
+            padding: 90px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
-            font-size: 32px;
+            font-size: 36px;
             color: #2e7d32;
-            margin-bottom: 40px;
-            position: relative;
+            margin-bottom: 50px;
+            font-weight: 700;
         }
 
         .section-title::after {
             content: '';
             display: block;
-            width: 50px;
+            width: 60px;
             height: 3px;
             background-color: #4caf50;
-            margin: 10px auto 0;
+            margin: 12px auto 0;
         }
 
         .features {
@@ -141,39 +148,52 @@
 
         .card {
             background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.04);
             text-align: center;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
         }
 
         .card-icon {
-            font-size: 40px;
+            font-size: 45px;
             color: #4caf50;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .card h3 {
             margin-bottom: 15px;
-            color: #333;
+            color: #222;
+            font-size: 22px;
         }
 
-        /* 关于/内容区 */
+        .card p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        /* About Section */
         .about-container {
             display: flex;
             align-items: center;
-            gap: 50px;
+            gap: 60px;
             flex-wrap: wrap;
         }
 
         .about-text {
             flex: 1;
             min-width: 300px;
+        }
+
+        .about-text p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
         }
 
         .about-image {
@@ -183,120 +203,138 @@
 
         .about-image img {
             width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
         }
 
-        /* 行动呼吁表单 */
+        /* Call to Action Section */
         .cta-section {
             background-color: #e8f5e9;
             text-align: center;
         }
 
+        .cta-section p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
         .join-form {
-            max-width: 500px;
+            max-width: 550px;
             margin: 30px auto 0;
             display: flex;
-            gap: 10px;
+            gap: 12px;
         }
 
         .join-form input[type="email"] {
             flex: 1;
-            padding: 12px 20px;
+            padding: 14px 25px;
             border: 1px solid #ccc;
             border-radius: 25px;
             font-size: 16px;
             outline: none;
+            transition: border-color 0.3s;
         }
 
         .join-form input[type="email"]:focus {
             border-color: #4caf50;
         }
 
-        /* 页脚 */
+        /* Footer */
         footer {
             background-color: #2e7d32;
             color: white;
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 20px;
             font-size: 14px;
         }
 
-        /* 响应式调整 */
+        footer p {
+            margin-bottom: 8px;
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 32px; }
-            .hero p { font-size: 16px; }
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 18px; }
             .join-form { flex-direction: column; }
             .join-form input[type="email"] { border-radius: 25px; }
+            .about-container { gap: 30px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header / Navigation -->
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">🌱 守护地球</a>
+            <a href="#" class="logo">🌱 EcoEarth</a>
             <ul class="nav-links">
-                <li><a href="#home">首页</a></li>
-                <li><a href="#mission">核心理念</a></li>
-                <li><a href="#about">关于我们</a></li>
-                <li><a href="#join">加入行动</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#mission">Our Mission</a></li>
+                <li><a href="#about">Why It Matters</a></li>
+                <li><a href="#join">Take Action</a></li>
             </ul>
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section id="home" class="hero">
-        <h1>让地球重回蔚蓝与翠绿</h1>
-        <p>每一个小小的环保举动，都是对未来的慷慨投资。保护环境，从身边的每一件小事做起。</p>
-        <a href="#join" class="btn">加入我们</a>
+        <h1>Restore Our Beautiful Planet</h1>
+        <p>Every small green act is a generous investment in our collective future. Protect the environment, starting with the choices you make today.</p>
+        <a href="#join" class="btn">Join the Movement</a>
     </section>
 
+    <!-- Our Mission Section -->
     <section id="mission" class="section">
-        <h2 class="section-title">我们的核心理念</h2>
+        <h2 class="section-title">Our Core Values</h2>
         <div class="features">
             <div class="card">
                 <div class="card-icon">♻️</div>
-                <h3>减少与循环</h3>
-                <p>倡导践行“减量（Reduce）、再利用（Reuse）、再循环（Recycle）”的3R原则，减少塑料制品的使用，从源头减少垃圾。</p>
+                <h3>Reduce & Recycle</h3>
+                <p>Promoting the 3R principles: Reduce, Reuse, and Recycle. Say no to single-use plastics and minimize waste right from the source.</p>
             </div>
             <div class="card">
                 <div class="card-icon">☀️</div>
-                <h3>清洁能源</h3>
-                <p>支持和推广太阳能、风能等可再生能源的应用，减少对化石燃料的依赖，降低碳排放，对抗全球气候变暖。</p>
+                <h3>Clean Energy</h3>
+                <p>Supporting renewable energy sources like solar and wind power to decrease dependency on fossil fuels and combat global warming.</p>
             </div>
             <div class="card">
                 <div class="card-icon">🌳</div>
-                <h3>生态保护</h3>
-                <p>积极参与植树造林，保护森林与野生动植物栖息地，维护生物多样性，让自然生态恢复原本的平衡。</p>
+                <h3>Nature Conservation</h3>
+                <p>Participating in reforestation and protecting wildlife habitats to sustain biodiversity and restore the natural balance of our ecosystem.</p>
             </div>
         </div>
     </section>
 
+    <!-- Why It Matters Section -->
     <section id="about" class="section" style="background-color: #fff;">
         <div class="about-container">
             <div class="about-text">
-                <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">为什么保护环境迫在眉睫？</h2>
-                <p style="margin-bottom: 15px; color: #666;">全球变暖、冰川融化、海洋塑料污染……我们的地球母亲正面临着前所未有的危机。这不仅关乎北极熊和热带雨林，更关乎人类自身的生存和子孙后代的未来。</p>
-                <p style="color: #666;">我们致力于通过提高公众的环保意识，组织社区清理、低碳出行倡导和环保知识普及等活动，汇聚每一个人的微小力量，点亮绿色的明天。</p>
+                <h2 class="section-title" style="text-align: left; margin-bottom: 25px;">Why Protecting Nature is Urgent</h2>
+                <p>Global warming, melting glaciers, and severe marine plastic pollution—our Mother Earth is facing unprecedented crises. This is not just about polar bears and rainforests; it is about human survival and the world we leave behind for future generations.</p>
+                <p>Our mission is to raise public environmental awareness, organize community clean-ups, advocate for low-carbon living, and spread eco-friendly knowledge. Together, our micro-efforts can light up a greener tomorrow.</p>
             </div>
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80" alt="环保垃圾分类与手托绿苗">
+                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80" alt="Eco hands holding a green plant">
             </div>
         </div>
     </section>
 
+    <!-- Take Action Section -->
     <section id="join" class="section cta-section">
-        <h2 class="section-title">成为绿色守护者</h2>
-        <p>订阅我们的环保周刊，获取最新的低碳生活指南和社区环保活动资讯。</p>
-        <form class="join-form" onsubmit="alert('感谢您的关注！我们会定期为您发送环保资讯。'); return false;">
-            <input type="email" placeholder="请输入您的电子邮箱" required>
-            <button type="submit" class="btn">立即订阅</button>
+        <h2 class="section-title">Become a Green Guardian</h2>
+        <p>Subscribe to our newsletter for weekly low-carbon lifestyle tips and updates on upcoming eco-events.</p>
+        <form class="join-form" onsubmit="alert('Thank you for your subscription! We will keep you updated with the latest eco-news.'); return false;">
+            <input type="email" placeholder="Enter your email address" required>
+            <button type="submit" class="btn">Subscribe Now</button>
         </form>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>© 2026 守护地球行动计划. 保留所有权利。</p>
-        <p style="font-size: 12px; margin-top: 5px; opacity: 0.8;">设计理念：保护生态 · 绿色低碳 · 永续发展</p>
+        <p>© 2026 EcoEarth Initiative. All rights reserved.</p>
+        <p style="font-size: 12px; opacity: 0.8;">Ecology · Sustainability · Low Carbon Future</p>
     </footer>
 
 </body>
